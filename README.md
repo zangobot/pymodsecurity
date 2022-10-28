@@ -10,6 +10,13 @@ Python binding for ModSecurity
 
 * Note: This is an alpha version. Crashes are expected. Comments and suggestions are welcome
 
+# Docker instructions
+
+```
+docker build --tag pymodsecurity:0.0.5 -f Dockerfile .
+docker run -it pymodsecurity:0.0.5 bash
+```
+
 ## Developer Guide
 
 ### Dependencies
