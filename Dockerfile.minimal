@@ -33,8 +33,7 @@ RUN cd ModSecurity && \
     make -j 10 && \
     make install
 
-RUN ln -s /usr/local/modsecurity/lib/libmodsecurity.so /usr/lib/libmodsecurity.so
-RUN git clone --recurse-submodules https://github.com/pymodsecurity/pymodsecurity.git
+RUN cp /usr/local/modsecurity/lib/libmodsecurity.* /usr/lib/
+RUN git clone --recurse-submodules https://github.com/pymodsecurity/pymodsecurity.git -b v0.0.5
 RUN pip3 install setuptools pybind11
-RUN cd pymodsecurity && \
-    python3 setup.py install
+RUN cd pymodsecurity && python3 setup.py install
